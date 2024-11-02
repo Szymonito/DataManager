@@ -6,4 +6,12 @@ import fs from 'fs'
         output: process.stdout
     })
 
+    function askUser(question) {
+        return new Promise (resolve => {
+            rl.question (question, answer => {
+                resolve(answer)
+            })
+        })
+    }
+
     
