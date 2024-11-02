@@ -34,3 +34,15 @@ import fs from 'fs'
         fs.writeFileSync(filepath, JSON.stringify(existingData, null, 2))
         console.log("dodales obiekt")
     }
+
+    function readObject() {
+        const filepath = './object.json'
+
+        if(fs.existsSync(filepath)) {
+            const fileData = fs.readFileSync(filepath)
+            const data = JSON.parse(filedata)
+            console.log("Plik json zawiera:", data)
+        } else {
+            console.log("Nie ma takiego pliku.")
+        }
+    }
