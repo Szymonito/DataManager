@@ -46,3 +46,24 @@ import fs from 'fs'
             console.log("Nie ma takiego pliku.")
         }
     }
+
+    async function main() {
+        const choice = await askUser("Chcesz utworzyc plik?/n")
+
+        if(choice === "odczytać"){
+            readObject()
+        } else if (choice === "utworzyć") {
+            const name = await askUser("Podaj swoje imie/n")
+            const age = await askUser("Podaj swoj wiek/n")
+            const email = await askUser("Podaj swoj email/m")
+
+            createObject(name, age, email)
+        } else {
+            console.log("Musisz cos wybrac")
+        }
+
+        rl.close()
+
+    }
+
+    main()
